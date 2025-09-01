@@ -1,5 +1,7 @@
 # Week 1 Assignment - Arrays
 
+https://www.youtube.com/watch?v=31AwMbR9KZc
+
 ## Task
 1. Explain how to create an array of 100 elements. You can choose any data type of your choice. (requires C++ code) - **1 pts**
 
