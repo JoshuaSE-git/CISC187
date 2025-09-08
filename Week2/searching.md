@@ -18,3 +18,52 @@ At most, it would take 17 operations to perform binary search on an array of siz
   
 5. Write a C++ code that implements the linear and binary search algorithms. The algorithm should be able to calculate the number of steps against the given search. - **7 pts**
 
+```cpp
+#include <iostream>
+#include <vector>
+
+int binarySearch(std::vector<int>, int);
+int linearSearch(std::vector<int>, int);
+
+int main(void) {
+  int target = 6;
+  std::vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8};
+
+  int binarySearchCount = binarySearch(arr, target);
+  int linearSearchCount = linearSearch(arr, target);
+
+  std::cout << "Number of operations for binary search: " << binarySearchCount
+            << std::endl;
+  std::cout << "Number of operations for linear search: " << linearSearchCount
+            << std::endl;
+
+  return 0;
+}
+
+int binarySearch(std::vector<int> arr, int target) {
+  int count = 0;
+  int l = 0;
+  int r = arr.size() - 1;
+  while (l < r) {
+    int m = (l + r) / 2;
+    count++;
+    if (arr[m] == target) {
+      return count;
+    } else if (arr[m] > target) {
+      r = m - 1;
+    } else {
+      l = m + 1;
+    }
+  }
+  return -1;
+}
+
+int linearSearch(std::vector<int> arr, int target) {
+  for (int i = 0; i < arr.size() - 1; i++) {
+    if (arr[i] == target) {
+      return i;
+    }
+  }
+  return -1;
+}
+```
