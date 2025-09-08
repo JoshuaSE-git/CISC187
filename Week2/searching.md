@@ -23,6 +23,7 @@ At most, it would take 17 operations to perform binary search on an array of siz
 Compares linear and binary search for array: [1, 2, 3, 4, 5, 6, 7, 8] with target: 6
 
 binarySearch counts the number of steps to find target given arr; returns -1 if target not found
+
 linearSearch counts the number of steps to find target given arr; returns -1 if target not found
 
 ```cpp
