@@ -1,5 +1,7 @@
 # Linear and binary search
 
+https://www.youtube.com/watch?v=bgimWhnOm_Q
+
 ## Objective
 Understand the working of linear and binary search algorithms
 
