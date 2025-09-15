@@ -1,5 +1,7 @@
 # Sorting algorithms
 
+https://www.youtube.com/watch?v=lzGfcwxbexw
+
 ## Objective
 Understand the working of sorting algorithms and evaluate the efficiency of the algorithm
 
