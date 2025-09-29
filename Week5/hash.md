@@ -44,4 +44,16 @@ int main() {
 
 4. With the help of a figure, explain the problem that occured due to introducing a __tombstone__ to mark the deleted cell. **5 pts**
 
-When we introduce tombstones in an open-addressed hash table, we run the risk of slowing down operations like searching and probing.  Tombstones are necessary to keep probe chains intact, but when too many of them start to accumulate, searching can end becoming inneficient.
+When we introduce tombstones in an open-addressed hash table, we run the risk of slowing down operations like searching and probing.  Tombstones are necessary to keep probe chains intact, but when too many of them start to accumulate, we can end up probing through more tombstones than occupied cells.  One way to avoid this is through periodically rehashing the table whenever the ratio of tombstones to cells gets too high.
+
+## Before Re-Hash
+
+Here we will have to probe through many tombstone cells to reach our target cell.
+
+<img width="806" height="209" alt="Screenshot 2025-09-28 at 10 31 11 PM" src="https://github.com/user-attachments/assets/776fa4d2-8d99-4c54-8301-1284165fd299" />
+
+## After Re-Hash
+
+When we re-hash, we do not include any tombstone cells.  Now we will probe through the minimum amount of cells to reach our target cell.
+
+<img width="359" height="181" alt="Screenshot 2025-09-28 at 10 31 55 PM" src="https://github.com/user-attachments/assets/0f071ad7-7f70-4a46-b144-95caace09014" />
