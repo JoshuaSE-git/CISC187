@@ -58,7 +58,7 @@ int sum(int low, int high) {
 }
 
 int main() {
-    cout << sum(1, 5) << endl; // 1 + 2 + 3 + 4 + 5 = 15
+    cout << sum(1, 5) << endl;
     return 0;
 }
 ```
@@ -93,7 +93,6 @@ Write a recursive function that prints all the numbers (and just numbers).
 
 using namespace std;
 
-// Forward declaration
 struct Node;
 
 // A Node can hold either an int or a vector of Nodes
