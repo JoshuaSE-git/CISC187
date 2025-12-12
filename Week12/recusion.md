@@ -4,7 +4,7 @@
 Implement recursions in C++
 
 ## Tasks
-1. The following function prints every other number from a low number to a high number. For example, if low is 0 and high is 10, it would print:
+Question 1. The following function prints every other number from a low number to a high number. For example, if low is 0 and high is 10, it would print:
 ```
 0
 2
@@ -22,7 +22,7 @@ The base case is (if low > high).  Once the bottom bound increases past the top 
 
 ---
 
-2. My kid was playing with my computer and changed my factorial function so that it computes factorial based on (n - 2) instead of (n - 1). Predict what will happen when we run factorial(10) using this function:
+Question 2. My kid was playing with my computer and changed my factorial function so that it computes factorial based on (n - 2) instead of (n - 1). Predict what will happen when we run factorial(10) using this function:
 
 Solution:
 
@@ -30,7 +30,7 @@ This factorial function will cause an infinite recursion loop since the base cas
 
 ---
 
-3. Following is a function in which we pass in two numbers called low and high. The function returns the sum of all the numbers from low to high. For example, if low is 1, and high is 10, the function will return the sum of all numbers from 1 to 10, which is 55. However, our code is missing the base case, and will run indefinitely! Fix the code by adding the correct base case:
+Question 3. Following is a function in which we pass in two numbers called low and high. The function returns the sum of all the numbers from low to high. For example, if low is 1, and high is 10, the function will return the sum of all numbers from 1 to 10, which is 55. However, our code is missing the base case, and will run indefinitely! Fix the code by adding the correct base case:
 
 Solution:
 
@@ -54,7 +54,8 @@ int main() {
 
 ---
 
-4. Here is an array containing both numbers as well as other arrays, which in turn contain numbers and arrays:
+Question 4. Here is an array containing both numbers as well as other arrays, which in turn contain numbers and arrays:
+
 ```
 array=[ 1, 
         2, 
