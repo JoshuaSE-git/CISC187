@@ -23,6 +23,8 @@ def print_every_other(low, high)
 end
 ```
 
+Solution:
+
 The base case is (if low > high).  Once the bottom bound increases past the top bound, the function returns without printing or calling itself.
 
 2. My kid was playing with my computer and changed my factorial function so that it computes factorial based on (n - 2) instead of (n - 1). Predict what will happen when we run factorial(10) using this function:
@@ -33,6 +35,8 @@ def factorial(n)
     return n * factorial(n - 2)
 end
 ```
+
+Solution:
 
 This factorial function will cause an infinite recursion loop since the base case (n == 1) will never occur.  This happens because each recursive call decrements n by 2, and since we start at 10, we skip over 1.
 
@@ -85,6 +89,8 @@ array=[ 1,
       ]
 ```
 Write a recursive function that prints all the numbers (and just numbers).
+
+Solution:
 
 ```cpp
 #include <iostream>
