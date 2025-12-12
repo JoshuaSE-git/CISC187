@@ -45,11 +45,22 @@ end
 
 Solution:
 
-```
-def sum(low, high)
-    return 0 if low > high
-    return high + sum(low, high - 1)
-end
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int sum(int low, int high) {
+    if (low > high) {
+        return 0;
+    }
+    return high + sum(low, high - 1);
+}
+
+int main() {
+    cout << sum(1, 5) << endl; // 1 + 2 + 3 + 4 + 5 = 15
+    return 0;
+}
 ```
 
 4. Here is an array containing both numbers as well as other arrays, which in turn contain numbers and arrays:
@@ -75,11 +86,66 @@ array=[ 1,
 ```
 Write a recursive function that prints all the numbers (and just numbers).
 
-```python
-def print_numbers(arr):
-    for elem in arr:
-        if isinstance(elem, list):
-            print_numbers(elem)      # recursive step
-        else:
-            print(elem)              # base case: it's a number
+```cpp
+#include <iostream>
+#include <vector>
+#include <variant>
+
+using namespace std;
+
+// Forward declaration
+struct Node;
+
+// A Node can hold either an int or a vector of Nodes
+using Element = variant<int, vector<Node>>;
+
+struct Node {
+    Element value;
+};
+
+// Recursive function to print all numbers
+void print_numbers(const vector<Node>& arr) {
+    for (const auto& elem : arr) {
+        if (holds_alternative<int>(elem.value)) {
+            // Base case: it's a number
+            cout << get<int>(elem.value) << endl;
+        } else {
+            // Recursive case: it's another array
+            print_numbers(get<vector<Node>>(elem.value));
+        }
+    }
+}
+
+int main() {
+    vector<Node> array = {
+        {1},
+        {2},
+        {3},
+        {{ vector<Node>{{4}, {5}, {6}} }},
+        {7},
+        {{ vector<Node>{
+            {8},
+            {{ vector<Node>{
+                {9}, {10}, {11},
+                {{ vector<Node>{{12}, {13}, {14}} }}
+            }}}
+        }}},
+        {{ vector<Node>{
+            {15}, {16}, {17}, {18}, {19},
+            {{ vector<Node>{
+                {20}, {21}, {22},
+                {{ vector<Node>{
+                    {23}, {24}, {25},
+                    {{ vector<Node>{{26}, {27}, {29}} }}
+                }}},
+                {30}, {31}
+            }}},
+            {32}
+        }}},
+        {33}
+    };
+
+    print_numbers(array);
+    return 0;
+}
 ```
