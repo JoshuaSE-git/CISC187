@@ -14,14 +14,7 @@ Implement recursions in C++
 10
 ```
 
-Identify the base case in the function:
-```
-def print_every_other(low, high) 
-    return if low > high
-    puts low
-    print_every_other(low + 2, high)
-end
-```
+Identify the base case in the function.
 
 Solution:
 
@@ -29,23 +22,11 @@ The base case is (if low > high).  Once the bottom bound increases past the top 
 
 2. My kid was playing with my computer and changed my factorial function so that it computes factorial based on (n - 2) instead of (n - 1). Predict what will happen when we run factorial(10) using this function:
 
-```
-def factorial(n)
-    return 1 if n == 1
-    return n * factorial(n - 2)
-end
-```
-
 Solution:
 
 This factorial function will cause an infinite recursion loop since the base case (n == 1) will never occur.  This happens because each recursive call decrements n by 2, and since we start at 10, we skip over 1.
 
 3. Following is a function in which we pass in two numbers called low and high. The function returns the sum of all the numbers from low to high. For example, if low is 1, and high is 10, the function will return the sum of all numbers from 1 to 10, which is 55. However, our code is missing the base case, and will run indefinitely! Fix the code by adding the correct base case:
-```
-def sum(low, high)
-    return high + sum(low, high - 1)
-end
-```
 
 Solution:
 
